@@ -1,168 +1,540 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
+/* Custom properties for colors (if not already defined) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+  padding: 0 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: transparent;
+  /* Transparent background */
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+.navbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.main {
+.hotelLogo {
+  height: 100px;
+  width: auto;
+  cursor: pointer;
+}
+
+.navbarRight {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #b5fccd;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-out;
+}
+
+.navLink:hover {
+  color: #b5fccd;
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Cover the entire viewport height */
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.imageSliderContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* DİKKAT: transition özelliği artık JS tarafından kontrol ediliyor. */
+}
+
+.sliderImage {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+}
+
+.headerContent {
+  z-index: 5;
+}
+
+.headerHotelName {
+  font-size: 6rem;
+  color: #fff;
+  font-family: "Grand Hotel", cursive;
+  /* Make sure this font is imported or available */
+  font-weight: normal;
+  margin: 0;
+}
+
+.hotelSlogan {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #fff;
+  font-family: "Grand Hotel", cursive;
+  /* Make sure this font is imported or available */
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.browseRoomsButton {
+  background-color: transparent;
+  color: #fff;
+  padding: 15px 30px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.browseRoomsButton:hover {
+  color: #b5fccd;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.aboutSection {
+  display: flex;
+  padding: 5rem 2rem;
+  background-color: #f9f9f9;
+  align-items: center;
+}
+
+.aboutLeft {
+  text-align: center;
+  width: 100%;
+}
+
+.aboutHotelName {
+  font-size: 3rem;
+  color: var(--color-primary);
+  font-family: "Grand Hotel", cursive;
+  font-weight: normal;
+  border-right: 2px solid var(--color-primary);
+}
+
+.aboutRight {
+  width: 100%;
+  padding-left: 3rem;
+}
+
+.hotelDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.roomPreviewSection {
+  display: flex;
+  padding: 5rem 2rem;
+  background-color: #fff;
+  height: 600px;
+  /* Fixed height for consistency */
+}
+
+.roomPreviewLeft {
+  width: 100%;
+  padding-right: 3rem;
+}
+
+.roomPreviewDisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.roomImageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.roomImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  background-position: center center;
+}
+
+.roomImageName {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+}
+
+.roomImageContainer:hover .roomImageName {
+  transform: translate(-50%, -180%);
+}
+
+.roomImageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
+.roomImageContainer:hover .roomImageOverlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.roomOverlaySeparator {
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  margin: 10px 0;
+}
+
+.roomOverlayFeatures {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
+  color: white;
+  text-align: center;
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+.roomOverlayFeatures li {
+  margin: 5px 10px;
+  font-size: 1.1rem;
+}
+
+.roomFeaturesContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.roomFeaturesContainer li {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.roomPreviewRight {
+  width: 100%;
+}
+
+.roomMenu {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.roomMenuItem {
+  padding: 15px;
+  border: 1px solid var(--color-primary);
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #333;
+  border-radius: 8px;
+}
+
+.roomMenuItem:hover {
+  background-color: var(--color-light);
+  color: var(--color-primary);
+}
+
+.roomMenuItem.activeRoom {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: bold;
+}
+
+.commonFeaturesText {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.commonFeatures {
+  display: flex;
+  padding: 15px;
+  gap: 30px;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.commonFeaturesList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #333;
+  flex: 1;
+}
+
+.commonFeature > div {
+  display: flex;
+  gap: 5px;
+}
+
+.commonFeatures ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+}
+
+.commonFeatures ul li {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  gap: 5px;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.commonFeatures i {
+  color: var(--color-primary);
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+.informationText {
+  color: #fff;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.informationText i {
+  display: inline-flex;
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+/* Other existing sections (no changes, just included for completeness) */
+.customerReviewsSection,
+.imageGallery {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+}
+
+.reviewSlider,
+/* This class seems redundant with .customerReviewsSlider, can be removed */
+.galleryGrid {
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.galleryImageContainer {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.galleryImage:hover {
+  transform: scale(1.1);
 }
 
 .footer {
-  grid-row-start: 3;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0 2rem;
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.footer a {
+.footerLogo img {
+  height: 100px;
+  width: auto;
+}
+
+.footerInfo p,
+.contactAddresses p {
+  margin-bottom: 0.5rem;
+}
+
+.socialMediaIcons {
+  display: flex;
+  gap: 10px;
+}
+
+.socialMediaIcons i {
+  font-size: 1.5rem;
+}
+
+.footerCopyright {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
 }
 
-.footer img {
-  flex-shrink: 0;
+.footerText2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 0.5rem;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+.customerReviewsSlider .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+}
+
+.customerReviewsSlider .slick-list {
+  margin: 0 -20px;
+}
+
+/* Slider okları için çakışmayı önle ve sadece birer ok göster */
+.slick-arrow {
+  z-index: 3;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: #fff;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slick-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slick-prev {
+  left: -60px !important;
+  right: auto;
+}
+
+.slick-next {
+  right: -60px !important;
+  left: auto;
+}
+
+@media (max-width: 1200px) {
+  .slick-prev {
+    left: -35px !important;
   }
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  .slick-next {
+    right: -35px !important;
   }
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
+@media (max-width: 768px) {
+  .slick-prev {
+    left: 0 !important;
   }
 
-  .main {
-    align-items: center;
+  .slick-next {
+    right: 0 !important;
   }
 
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+  .slick-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
   }
 }
