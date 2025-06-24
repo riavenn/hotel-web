@@ -11,11 +11,11 @@ const ContactPage = () => {
   return (
     <div className={styles.contactPageContainer}>
       <div className={styles.container}>
-        <h1>İletişim</h1>
+        <h1 className={styles.pageTitle}>İletişim</h1>
 
         <div className={styles.contactContent}>
           <div className={styles.formContainer}>
-            <h2>Bize Ulaşın</h2>
+            <h2 className={styles.sectionTitle}>Bize Ulaşın</h2>
             <form className={styles.contactForm}>
               <div className={styles.formGroup}>
                 <label htmlFor="name">Adınız:</label>
@@ -39,13 +39,13 @@ const ContactPage = () => {
 
           <div className={styles.contactInfo}>
             <div>
-              <h2>Otel İletişim Bilgileri</h2>
+              <h2 className={styles.sectionTitle}>Otel İletişim Bilgileri</h2>
               <p><FaMapMarkerAlt /> Adres: Kızılay Mah. Atatürk Bulvarı No: 123, Ankara</p>
               <p><FaPhone /> Telefon: +90 312 456 7890</p>
               <p><FaEnvelope /> E-posta: info@luxuryhotel.com</p>
             </div>
             <div className={styles.mapContainer}>
-              <h2>Konumumuz</h2>
+              <h2 className={styles.sectionTitle}>Konumumuz</h2>
               <MapWithNoSSR />
             </div>
           </div>

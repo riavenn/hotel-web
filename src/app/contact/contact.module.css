@@ -26,7 +26,7 @@
   margin-right: 2rem;
 }
 
-:global(h1) {
+.pageTitle {
   text-align: center;
   color: #2d3748;
   margin: 0;
@@ -39,7 +39,7 @@
   background-clip: text;
 }
 
-:global(h2) {
+.sectionTitle {
   text-align: center;
 }
 
