@@ -1,14 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import styles from "./page.module.css";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaTwitter,
+  FaWifi,
+  FaTv,
+} from "react-icons/fa";
 import { HiInformationCircle } from "react-icons/hi2";
 import { IoIosArrowForward } from "react-icons/io";
+import Navbar from "./navbar";
+import Footer from "./components/Footer";
+import { MdAirportShuttle, MdLocalLaundryService } from "react-icons/md";
+import { IoBedSharp } from "react-icons/io5";
+import { GiBroom } from "react-icons/gi";
 
 // --- DÜZENLENMİŞ HEADER BİLEŞENİ ---
 function Header() {
@@ -69,7 +79,6 @@ function Header() {
         className={styles.imageSliderContainer}
         style={{
           transform: `translateX(-${currentImageIndex * 100}%)`,
-          // isTransitioning durumuna göre CSS transition'ı dinamik olarak uygula
           transition: isTransitioning ? "transform 1s ease-in-out" : "none",
         }}>
         {images.map((image, index) => (
@@ -80,9 +89,8 @@ function Header() {
         ))}
       </div>
       <div className={styles.headerContent}>
-        <h1 className={styles.headerHotelName}>Grand Max Luxury</h1>
+        <h2 className={styles.headerHotelName}>Grand Max Luxury</h2>
         <p className={styles.hotelSlogan}>Her Ziyaret, Yeni Bir Hikaye.</p>
-        <button className={styles.browseRoomsButton}>Odalara Göz At</button>
       </div>
     </header>
   );
@@ -92,40 +100,22 @@ function Header() {
 export default function Home() {
   const [selectedRoomIndex, setSelectedRoomIndex] = useState(0);
   const [showOverlay, setShowOverlay] = useState(false);
-  const [reviewsPerPage, setReviewsPerPage] = useState(3);
-  const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
-  const autoSlideRef = useRef();
-
-  useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth <= 768) {
-        setReviewsPerPage(1);
-      } else if (window.innerWidth <= 1024) {
-        setReviewsPerPage(2);
-      } else {
-        setReviewsPerPage(3);
-      }
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const rooms = [
     {
-      name: "Standart Oda",
-      image: "/images/room-standart.jpg",
-      features: ["2 Kişilik Oda", "35 m²", "Çift Kişilik Yatak"],
-    },
-    {
       name: "Deluxe Oda",
-      image: "/images/room-deluxe.jpg",
-      features: ["3 Kişilik Oda", "45 m²", "King Boy Yatak"],
+      image: "/images/gallery-1.jpg",
+      features: ["2 Kişi", "35 m²", "Şehir Manzarası"],
     },
     {
-      name: "Suit Oda",
-      image: "/images/room-suit.jpg",
-      features: ["4 Kişilik Oda", "70 m²", "King Boy Yatak, Tek Kişilik Yatak"],
+      name: "Superior Oda",
+      image: "/images/gallery-2.jpg",
+      features: ["2 Kişi", "42 m²", "Deniz Manzarası"],
+    },
+    {
+      name: "Junior Süit",
+      image: "/images/gallery-3.jpg",
+      features: ["3 Kişi", "65 m²", "Panoramik Manzara"],
     },
   ];
 
@@ -162,36 +152,37 @@ export default function Home() {
     " Zemin Laminant Parke",
   ];
 
+  const services = [
+    {
+      icon: <FaWifi />,
+      name: "Wifi & Internet",
+    },
+    {
+      icon: <MdAirportShuttle />,
+      name: "Havaalanı Transferi",
+    },
+    {
+      icon: <FaTv />,
+      name: "Akıllı TV",
+    },
+    {
+      icon: <IoBedSharp />,
+      name: "Odada Kahvaltı",
+    },
+    {
+      icon: <MdLocalLaundryService />,
+      name: "Çamaşırhane Hizmeti",
+    },
+    {
+      icon: <GiBroom />,
+      name: "Oda Temizliği",
+    },
+  ];
+
   return (
     <div>
       {/* Navbar */}
-      <nav className={styles.navbar}>
-        <div className={styles.navbarLeft}>
-          {/* Hotel Name and Logo */}
-          <img
-            src="/otel-logo.png"
-            alt="Hotel Logo"
-            className={styles.hotelLogo}
-          />
-        </div>
-        <div className={styles.navbarRight}>
-          <a href="#home" className={styles.navLink}>
-            Anasayfa
-          </a>
-          <a href="#about" className={styles.navLink}>
-            Hakkında
-          </a>
-          <a href="#rooms" className={styles.navLink}>
-            Odalar
-          </a>
-          <a href="#services" className={styles.navLink}>
-            Hizmetler
-          </a>
-          <a href="#contact" className={styles.navLink}>
-            İletişim
-          </a>
-        </div>
-      </nav>
+      <Navbar />
       {/* Header */}
       <Header />
       {/* About Section */}
@@ -199,6 +190,7 @@ export default function Home() {
         <div className={styles.aboutLeft}>
           <h2 className={styles.aboutHotelName}>Grand Max Luxury</h2>
         </div>
+        <div className={styles.aboutMiddle}></div>
         <div className={styles.aboutRight}>
           <p className={styles.hotelDescription}>
             Lüksün konforla buluştuğu seçkin otelimize hoş geldiniz. Şehrin
@@ -207,7 +199,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <section className={styles.roomPreviewSection}>
+      <section id="rooms" className={styles.roomPreviewSection}>
         <div className={styles.roomPreviewLeft}>
           <div
             className={styles.roomImageContainer}
@@ -291,9 +283,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Hizmetler*/}
+      <section className={styles.services}>
+        <h2 className={styles.servicesTitle}>Hizmetlerimiz</h2>
+        <div className={styles.servicesList}>
+          {services.map((services, index) => {
+            return (
+              <div key={index} className={styles.servicesItem}>
+                <div className={styles.serviceIcon}>{services.icon}</div>
+                <div className={styles.serviceName}>
+                  <p>{services.name}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
       {/* Image Gallery */}
       <section className={styles.imageGallery}>
-        <h2 className={styles.sectionTitle}>Image Gallery</h2>
+        <h2 className={styles.sectionTitle}>Galeri</h2>
         <div className={styles.galleryGrid}>
           {galleryImages.map((image, index) => {
             return (
@@ -309,30 +317,7 @@ export default function Home() {
         </div>
       </section>
       {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerLogo}>
-          <img
-            src="/otel-logo.png"
-            alt="Hotel Logo"
-            className={styles.footerLogo}
-          />
-        </div>
-        <div className={styles.footerText}>
-          <p className={styles.footerCopyright}>© 2025 Tüm hakları saklıdır.</p>
-          This website was designed and developed by Mert Saykal.
-        </div>
-        <div className={styles.socialMediaIcons}>
-          <i>
-            <FaInstagram />
-          </i>
-          <i>
-            <FaYoutube />
-          </i>
-          <i>
-            <FaTwitter />
-          </i>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
