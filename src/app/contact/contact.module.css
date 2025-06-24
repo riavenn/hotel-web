@@ -1,8 +1,13 @@
 .contactPageContainer {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-accent) 100%
+  );
   padding: 2rem 0 0 0;
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-text);
   position: relative;
   z-index: 0;
@@ -33,7 +38,11 @@
   padding: 3rem 2rem 2rem;
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,14 +81,14 @@
   .contactContent {
     grid-template-columns: 1fr;
   }
-  
+
   .formContainer {
     border-right: none;
     border-bottom: 1px solid #e2e8f0;
   }
 }
 
-:global(h2) {
+.sectionTitle {
   color: #2d3748;
   font-size: 1.8rem;
   font-weight: 700;
@@ -88,13 +97,17 @@
 }
 
 .sectionTitle::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 50px;
   height: 3px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 2px;
 }
 
@@ -158,7 +171,11 @@
 }
 
 .submitButton {
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   color: white;
   padding: 1rem 2.5rem;
   border: none;
@@ -174,7 +191,11 @@
 }
 
 .submitButton:hover {
-  background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+  background: linear-gradient(
+    45deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(90, 130, 126, 0.4);
 }
