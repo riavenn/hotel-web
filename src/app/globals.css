@@ -4,10 +4,9 @@
   --foreground-rgb: 34, 40, 49; /* #222831 */
   --background-start-rgb: 57, 62, 70; /* #393E46 */
   --background-end-rgb: 57, 62, 70; /* #393E46 */
-  /* Yeni Renk Paleti */
   --color-primary: #222831; /* Koyu gri */
   --color-secondary: #393E46; /* Orta gri */
-  --color-accent: #00ADB5; /* Turkuaz */
+  --color-accent: #A4CCD9; /* Turkuaz */
   --color-light: #EEEEEE; /* Açık gri */
   --color-dark: #222831; /* Koyu gri */
   --color-text: #EEEEEE; /* Açık gri metin */

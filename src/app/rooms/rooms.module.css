@@ -21,7 +21,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 20px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(45deg, var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -156,7 +156,7 @@
 
 .bookButton {
   width: 100%;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  background: linear-gradient(45deg, var(--color-primary));
   color: var(--color-light);
   border: none;
   padding: 10px;
@@ -180,9 +180,50 @@
   width: 100%;
 }
 
+/* Tablet Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .pageTitle {
+    font-size: 3rem;
+  }
+
+  .pageSubtitle {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+  }
+
+  .roomsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 800px;
+  }
+
+  .roomContent {
+    padding: 1rem;
+  }
+
+  .roomSpecs {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .feature {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}
+
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
   .roomsPage {
     padding-top: 100px;
+  }
+
+  .container {
+    padding: 20px 10px;
   }
 
   .pageTitle {
@@ -198,7 +239,7 @@
 
   .roomsGrid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 1.5rem;
   }
 
   .roomCard {
@@ -206,23 +247,100 @@
   }
 
   .roomImageContainer {
-    height: 220px;
+    height: 200px;
   }
 
   .roomContent {
-    padding: 20px;
+    padding: 15px;
   }
 
   .roomName {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
   }
 
   .roomSpecs {
-    gap: 20px;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .roomSpec {
+    font-size: 0.85rem;
+  }
+
+  .specIcon {
+    font-size: 1rem;
+  }
+
+  .roomFeatures {
+    gap: 8px;
+    margin-bottom: 1.2rem;
+  }
+
+  .feature {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .bookButton {
+    padding: 12px;
+    font-size: 0.85rem;
   }
 
   .roomPrice {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Small Mobile Responsive Design */
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .pageSubtitle {
     font-size: 1rem;
-    padding: 10px 16px;
+  }
+
+  .roomCard {
+    margin: 0 5px;
+  }
+
+  .roomImageContainer {
+    height: 180px;
+  }
+
+  .roomContent {
+    padding: 12px;
+  }
+
+  .roomName {
+    font-size: 1.2rem;
+  }
+
+  .roomSpecs {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .roomSpec {
+    font-size: 0.8rem;
+  }
+
+  .feature {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+
+  .bookButton {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
+  .roomPrice {
+    font-size: 0.85rem;
+    padding: 6px 10px;
   }
 }

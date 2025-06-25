@@ -1,6 +1,11 @@
 .aboutPage {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-accent) 100%
+  );
   color: var(--color-text);
   padding-top: 80px;
 }
@@ -20,7 +25,7 @@
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
-  background: linear-gradient(45deg, var(--color-light), white);
+  background: linear-gradient(45deg, var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -144,7 +149,11 @@
 .statisticItem {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 15px;
   color: white;
   box-shadow: 0 10px 30px rgba(90, 130, 126, 0.3);
@@ -236,22 +245,22 @@
   .aboutTitle {
     font-size: 2.5rem;
   }
-  
+
   .heroImageSection {
     height: 300px;
   }
-  
+
   .aboutContentSection,
   .statisticsSection {
     padding: 2rem;
   }
-  
+
   .infoCardsGrid,
   .statisticsGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .aboutContentTitle,
   .statisticsTitle {
     font-size: 2rem;
@@ -262,11 +271,11 @@
   .container {
     padding: 0 10px;
   }
-  
+
   .aboutTitle {
     font-size: 2rem;
   }
-  
+
   .aboutContentSection,
   .statisticsSection {
     padding: 1.5rem;

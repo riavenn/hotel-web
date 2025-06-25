@@ -27,7 +27,6 @@
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
-  opacity: 1; /* Tam görünürlük */
 }
 
 .headerContent {
@@ -69,7 +68,6 @@
   text-align: center;
   margin: 0;
   letter-spacing: 2px;
-  border-right: 2px solid;
   height: 100px;
   display: flex;
   align-items: center;
@@ -77,9 +75,10 @@
 }
 
 .aboutMiddle {
-  background-color: transparent;
-  width: 1px;
+  background-color: var(--color-accent);
+  width: 2px;
   height: 150px;
+  margin: 0 2rem;
 }
 
 .aboutRight {
@@ -135,6 +134,7 @@
   object-fit: cover;
   margin: 0;
   background-position: center center;
+  opacity: 0.7;
 }
 
 .roomImageName {
@@ -503,6 +503,68 @@
   left: auto;
 }
 
+/* Tablet Responsive Design */
+@media (max-width: 1024px) {
+  .headerHotelName {
+    font-size: 3rem;
+  }
+
+  .hotelSlogan {
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+  }
+
+  .aboutSection {
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
+  .aboutHotelName {
+    font-size: 2rem;
+    border-right: none;
+    border-bottom: none;
+    height: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .aboutMiddle {
+    display: none;
+  }
+
+  .aboutRight {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .roomPreviewSection {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .roomImageContainer {
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  .servicesList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1rem 2rem;
+    justify-items: center;
+  }
+
+  .servicesItem {
+    width: 200px;
+    height: 200px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
 @media (max-width: 1200px) {
   .slick-prev {
     left: -35px !important;
@@ -513,7 +575,153 @@
   }
 }
 
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
+  .header {
+    height: 70vh;
+  }
+
+  .headerHotelName {
+    font-size: 2.5rem;
+  }
+
+  .hotelSlogan {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+
+  .aboutSection {
+    padding: 20px 10px;
+    min-height: auto;
+    padding-top: 40px;
+  }
+
+  .aboutHotelName {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    border-right: none;
+    height: auto;
+  }
+
+  .aboutMiddle {
+    display: none;
+  }
+
+  .hotelDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .roomPreviewSection {
+    padding: 20px 10px;
+    flex-direction: column;
+  }
+
+  .roomPreviewLeft {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .roomImageContainer {
+    width: calc(100vw - 40px);
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+  }
+
+  .roomImageName {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+
+  .roomImageContainer:hover .roomImageName {
+    transform: translate(-50%, -120%);
+  }
+
+  .roomOverlayFeatures {
+    margin-top: 20px;
+  }
+
+  .roomOverlayFeatures li {
+    font-size: 1rem;
+    margin: 3px 8px;
+  }
+
+  .roomMenu {
+    gap: 8px;
+  }
+
+  .roomMenuItem {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .commonFeatures {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .commonFeaturesList {
+    gap: 0;
+  }
+
+  .services {
+    padding: 40px 10px;
+    min-height: auto;
+  }
+
+  .servicesTitle {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .servicesList {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .servicesItem {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .serviceIcon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .customerReviewsSection,
+  .imageGallery {
+    padding: 3rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 1rem;
+  }
+
+  .footerLogo img {
+    height: 80px;
+  }
+
   .slick-prev {
     left: 0 !important;
   }
@@ -526,5 +734,37 @@
     width: 36px;
     height: 36px;
     font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile Responsive Design */
+@media (max-width: 480px) {
+  .headerHotelName {
+    font-size: 2rem;
+  }
+
+  .hotelSlogan {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+
+  .aboutHotelName {
+    font-size: 1.5rem;
+  }
+
+  .hotelDescription {
+    font-size: 0.9rem;
+  }
+
+  .servicesTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
   }
 }
