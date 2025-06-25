@@ -1,9 +1,19 @@
-'use client';
+"use client";
 import React from "react";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 import styles from "./page.module.css";
-import Footer from '../components/Footer';
-import { FaWifi, FaCar, FaSwimmingPool, FaDumbbell, FaConciergeBell, FaUtensils, FaSpa, FaShieldAlt, FaStar } from 'react-icons/fa';
+import Footer from "../components/Footer";
+import {
+  FaWifi,
+  FaCar,
+  FaSwimmingPool,
+  FaDumbbell,
+  FaConciergeBell,
+  FaUtensils,
+  FaSpa,
+  FaShieldAlt,
+  FaStar,
+} from "react-icons/fa";
 
 function About() {
   const [roomCount, setRoomCount] = useState(0);
@@ -18,7 +28,7 @@ function About() {
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          
+
           // Animate room count to 200+ (slower)
           let roomCounter = 0;
           const roomInterval = setInterval(() => {
@@ -69,25 +79,27 @@ function About() {
   return (
     <div className={styles.aboutPage}>
       <div className={styles.container}>
-        <h1 className={styles.aboutTitle}>HAKKIMIZDA</h1>
-        
         {/* Hero Image Section */}
         <div className={styles.heroImageSection}>
-          <img 
-            src="/images/gallery-6.jpg" 
-            alt="Grand Max Luxury Hotel" 
-            className={styles.heroImage} 
+          <img
+            src="/images/gallery-6.jpg"
+            alt="Grand Max Luxury Hotel"
+            className={styles.heroImage}
           />
         </div>
 
         {/* About Content Section */}
         <div className={styles.aboutContentSection}>
-          <h2 className={styles.aboutContentTitle}>Grand Max Luxury Hotel'e Hoş Geldiniz</h2>
+          <h2 className={styles.aboutContentTitle}>
+            Grand Max Luxury Hotel'e Hoş Geldiniz
+          </h2>
           <p className={styles.aboutDescription}>
-            Şehrin kalbinde, ancak huzur dolu bir vaha olarak konumlanan otelimiz, misafirlerine unutulmaz
-            bir konaklama deneyimi sunmak için tasarlandı. Modern lüksün incelikli detaylarla harmanlandığı 
-            Grand Max, iş seyahatlerinizden romantik kaçamaklara, aile tatillerinden özel kutlamalara kadar 
-            her türlü ihtiyacınızı karşılamak üzere özenle düşünülmüş hizmetler sunar.
+            Şehrin kalbinde, ancak huzur dolu bir vaha olarak konumlanan
+            otelimiz, misafirlerine unutulmaz bir konaklama deneyimi sunmak için
+            tasarlandı. Modern lüksün incelikli detaylarla harmanlandığı Grand
+            Max, iş seyahatlerinizden romantik kaçamaklara, aile tatillerinden
+            özel kutlamalara kadar her türlü ihtiyacınızı karşılamak üzere
+            özenle düşünülmüş hizmetler sunar.
           </p>
         </div>
 
@@ -168,9 +180,13 @@ function About() {
             <div className={styles.statisticItem}>
               <div className={styles.starRating}>
                 {[...Array(5)].map((_, index) => (
-                  <FaStar 
-                    key={index} 
-                    className={`${styles.starIcon} ${index < satisfactionCount ? styles.starFilled : styles.starEmpty}`}
+                  <FaStar
+                    key={index}
+                    className={`${styles.starIcon} ${
+                      index < satisfactionCount
+                        ? styles.starFilled
+                        : styles.starEmpty
+                    }`}
                   />
                 ))}
               </div>
@@ -183,7 +199,7 @@ function About() {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );

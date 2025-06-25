@@ -89,7 +89,7 @@
   background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
   color: var(--color-light); /* Açık gri metin */
   padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 1rem;
   box-shadow: 0 2px 10px rgba(0, 173, 181, 0.3); /* Turkuazın gölgesi */

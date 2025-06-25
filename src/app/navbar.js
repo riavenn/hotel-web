@@ -5,6 +5,7 @@ import { useState } from "react";
 import styles from "./navbar.module.css";
 
 const Navbar = ({ className }) => {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,21 +22,23 @@ const Navbar = ({ className }) => {
         />
       </Link>
       
-
-      
       <div className={styles?.navbarRight || ''}>
         <Link href="/" className={styles?.navLink || ''}>
           Anasayfa
         </Link>
+
         <Link href="/about" className={styles?.navLink || ''}>
           Hakkında
         </Link>
+
         <Link href="/rooms" className={styles?.navLink || ''}>
           Odalar
         </Link>
+
         <Link href="/contact" className={styles?.navLink || ''}>
           İletişim
         </Link>
+
       </div>
       
       <button className={styles?.hamburgerMenu || ''} onClick={toggleMenu}>

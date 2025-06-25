@@ -35,14 +35,13 @@
 .navLink {
   color: var(--color-light); /* Açık gri metin */
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  text-transform: uppercase;
 }
 
 .navLink:hover {
@@ -150,7 +149,7 @@
 .mobileMenu {
   display: none;
   position: fixed;
-  top: 80px;
+  top: 0px;
   left: 0;
   right: 0;
   background: rgba(57, 62, 70, 0.98);
@@ -174,7 +173,6 @@
   padding: 1rem 0;
   border-bottom: 1px solid rgba(238, 238, 238, 0.1);
   transition: all 0.3s ease;
-  text-transform: uppercase;
 }
 
 .mobileNavLink:hover {

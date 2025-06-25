@@ -17,7 +17,7 @@
   max-width: 1000px;
   margin: 0 auto 40px auto;
   background-color: var(--color-dark); /* Koyu gri kart arkaplanı */
-  border-radius: 20px;
+  border-radius: 8px;
   box-shadow: 0 10px 30px rgba(34, 40, 49, 0.1); /* Koyu gri gölge */
   backdrop-filter: blur(10px);
   overflow: hidden;
@@ -98,6 +98,11 @@
 }
 
 /* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .contactPageContainer {
+    padding-top: 120px;
+  }
+}
 @media (max-width: 768px) {
   .contactPage {
     padding-top: 120px;
