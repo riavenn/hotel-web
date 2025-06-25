@@ -1,15 +1,19 @@
 .roomsPage {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  color: #ffffff;
+  background-color: var(--color-secondary); /* Orta gri arkaplan */
+  color: var(--color-light); /* Açık gri metin */
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  padding: 50px;
+  padding: 50px 0 0 0; /* Üstten 50px, diğer yönlerden 0 boşluk */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Sayfanın en az viewport yüksekliği kadar olmasını sağlar */
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 20px; /* İçerik için padding */
+  flex-grow: 1; /* İçeriğin kalan alanı kaplamasını sağlar */
 }
 
 .pageTitle {
@@ -17,11 +21,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 20px;
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -31,7 +31,7 @@
 .pageSubtitle {
   text-align: center;
   font-size: 1.3rem;
-  color: #cccccc;
+  color: var(--color-light); /* Açık gri metin */
   margin-bottom: 60px;
   max-width: 600px;
   margin-left: auto;
@@ -48,19 +48,21 @@
 }
 
 .roomCard {
-  background: rgba(255, 255, 255, 0.95);
+  background-color: var(--color-secondary); /* Orta gri kart arkaplanı */
   backdrop-filter: blur(10px);
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent); /* Turkuaz border */
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(90, 130, 126, 0.2);
+  box-shadow: 0 4px 20px rgba(34, 40, 49, 0.1); /* Koyu gri gölge */
+  display: flex;
+  flex-direction: column;
 }
 
 .roomCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(90, 130, 126, 0.3);
-  border-color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(34, 40, 49, 0.2); /* Koyu gri gölge */
+  border-color: var(--color-accent);
 }
 
 .roomImageContainer {
@@ -84,17 +86,13 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  color: white;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  color: var(--color-light); /* Açık gri metin */
   padding: 6px 12px;
   border-radius: 20px;
   font-weight: 700;
   font-size: 1rem;
-  box-shadow: 0 2px 10px rgba(90, 130, 126, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 173, 181, 0.3); /* Turkuazın gölgesi */
 }
 
 .roomPrice span {
@@ -105,13 +103,17 @@
 
 .roomContent {
   padding: 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .roomName {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
-  color: var(--color-primary);
+  color: var(--color-light);
 }
 
 .roomSpecs {
@@ -124,7 +126,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-primary);
+  color: var(--color-light);
   font-weight: 600;
   font-size: 0.95rem;
 }
@@ -137,26 +139,25 @@
 }
 
 .roomFeatures {
-  margin-bottom: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
 }
 
 .feature {
-  background: rgba(90, 130, 126, 0.1);
-  color: var(--color-primary);
-  padding: 3px 6px;
+  background-color: var(--color-dark); /* Koyu gri arkaplan */
+  color: var(--color-light); /* Açık gri metin */
+  padding: 5px 10px;
   border-radius: 10px;
-  font-size: 0.75rem;
-  border: 1px solid rgba(90, 130, 126, 0.2);
+  font-size: 0.8rem;
+  border: 1px solid var(--color-accent); /* Turkuaz border */
 }
 
 .bookButton {
   width: 100%;
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  color: white;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+  color: var(--color-light);
   border: none;
   padding: 10px;
   border-radius: 8px;
@@ -166,16 +167,17 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-top: auto;
 }
 
 .bookButton:hover {
-  background: linear-gradient(
-    45deg,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(90, 130, 126, 0.4);
+  background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4); /* Turkuazın gölgesi */
+}
+
+.footerContainer {
+  margin-top: auto; /* İçeriğin bitiminden sonra kalan boşluğu doldurur */
+  width: 100%;
 }
 
 @media (max-width: 768px) {

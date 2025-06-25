@@ -92,7 +92,9 @@ function Rooms() {
       </div>
       
       {/* Footer */}
-      <Footer />
+      <div className={styles.footerContainer}>
+        <Footer />
+      </div>
     </div>
   );
 }

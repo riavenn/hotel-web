@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--color-dark); /* Koyu gri metin */ /* Açık gri */
   text-align: center;
 }
 
@@ -27,7 +27,7 @@
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.7;
+  opacity: 1; /* Tam görünürlük */
 }
 
 .headerContent {
@@ -35,20 +35,16 @@
 }
 
 .headerHotelName {
-  font-size: 3rem;
-  font-weight: 100;
-  color: #fff;
-  margin: 0;
-  background: linear-gradient(to right, #b5fccd 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 4rem; /* Daha büyük font boyutu */
+  font-weight: 700; /* Daha kalın font */
+  color: var(--color-light); /* Açık gri metin */
 }
 
 .hotelSlogan {
-  font-size: 1rem;
-  letter-spacing: 10px;
-  margin-bottom: 30px;
-  color: #fff;
+  font-size: 1.5rem; /* Daha büyük font boyutu */
+  letter-spacing: 12px; /* Daha geniş harf aralığı */
+  margin-bottom: 40px; /* Daha fazla alt boşluk */
+  color: var(--color-light); /* Açık gri */
   margin: 0;
   margin-bottom: 2rem;
 }
@@ -56,13 +52,9 @@
 .aboutSection {
   display: flex;
   padding: 40px 20px;
-  background: linear-gradient(
-    135deg,
-    var(--color-light) 0%,
-    var(--color-accent) 100%
-  );
   align-items: center;
   min-height: 250px;
+  background-color: var(--color-secondary); /* Orta gri */
 }
 
 .aboutLeft {
@@ -73,10 +65,15 @@
 .aboutHotelName {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-light);
   text-align: center;
   margin: 0;
   letter-spacing: 2px;
+  border-right: 2px solid;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .aboutMiddle {
@@ -93,7 +90,7 @@
 .hotelDescription {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--color-text);
+  color: var(--color-light);
   text-align: center;
   max-width: 600px;
   margin: 0;
@@ -103,12 +100,8 @@
   display: flex;
   padding: 5rem 2rem;
   min-height: 600px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 100%
-  );
-  color: white;
+  background-color: var(--color-secondary); /* Orta gri */
+  color: var(--color-light); /* Açık gri metin */
 }
 
 .roomPreviewLeft {
@@ -153,9 +146,7 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   transition: all 0.5s ease-in-out;
-  background: linear-gradient(to right, #b5fccd 0%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-light); /* Açık gri metin */
   text-transform: uppercase;
   letter-spacing: 6px;
 }
@@ -170,7 +161,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(34, 40, 49, 0.8); /* Daha koyu gri overlay */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -188,7 +179,7 @@
 .roomOverlaySeparator {
   width: 50%;
   height: 2px;
-  background-color: #b5fccd;
+  background-color: var(--color-accent); /* Turkuaz */
   margin: 10px 0;
 }
 
@@ -196,12 +187,18 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  color: #b5fccd;
+  color: var(--color-light); /* Açık gri metin */
   text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
+}
+
+.sectionSeparator {
+  width: 50%;
+  height: 2px;
+  background-color: var(--color-accent);
 }
 
 .roomOverlayFeatures li {
@@ -302,9 +299,6 @@
   gap: 5px;
 }
 
-.commonFeatures i {
-}
-
 .information {
   width: 100%;
 }
@@ -328,11 +322,7 @@
 .services {
   min-height: 500px;
   padding: 80px 20px;
-  background: linear-gradient(
-    135deg,
-    var(--color-accent) 0%,
-    var(--color-light) 100%
-  );
+  background-color: var(--color-secondary); /* Orta gri arkaplan */
   color: #333;
   text-align: center;
 }
@@ -340,7 +330,7 @@
 .servicesTitle {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: #fff;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -348,7 +338,7 @@
 .servicesList {
   padding: 2rem 5rem;
   display: flex;
-  /* gap: 2rem; */
+  gap: 1rem;
   justify-content: space-around;
 }
 
@@ -364,6 +354,8 @@
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(90, 130, 126, 0.1);
   border: 2px solid transparent;
+  width: 250px; /* Sabit genişlik */
+  height: 250px; /* Sabit yükseklik */
 }
 
 .servicesItem:hover {
@@ -393,7 +385,7 @@
 
 .sectionTitle {
   font-size: 2.5rem;
-  color: #171717;
+  color: #fff;
   margin-bottom: 3rem;
 }
 

@@ -1,10 +1,6 @@
 .footer {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 100%
-  );
-  color: white;
+  background-color: var(--color-primary); /* Koyu gri arkaplan */
+  color: var(--color-light); /* Açık gri metin */
   padding: 3rem 0 1rem;
   width: 100%;
   margin: 0;
@@ -34,7 +30,7 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--color-light);
+  color: var(--color-light); /* Açık gri metin */
 }
 
 .footerDescription {
@@ -47,7 +43,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--color-light);
+  color: var(--color-light); /* Açık gri metin */
 }
 
 .contactInfo {
@@ -65,7 +61,7 @@
 }
 
 .contactIcon {
-  color: var(--color-accent);
+  color: var(--color-accent); /* Turkuaz */
   font-size: 1rem;
   flex-shrink: 0;
 }
@@ -80,7 +76,7 @@
 }
 
 .quickLinks li a {
-  color: white;
+  color: var(--color-light);
   text-decoration: none;
   font-size: 0.9rem;
   opacity: 0.9;
@@ -89,7 +85,7 @@
 
 .quickLinks li a:hover {
   opacity: 1;
-  color: var(--color-light);
+  color: var(--color-accent); /* Turkuaz */
   padding-left: 0.5rem;
 }
 
@@ -104,9 +100,9 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-secondary); /* Orta gri */
   border-radius: 50%;
-  color: white;
+  color: var(--color-light);
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -114,10 +110,10 @@
 }
 
 .socialLink:hover {
-  background: var(--color-light);
+  background-color: var(--color-accent); /* Turkuaz */
   color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.2);
 }
 
 .footerBottom {

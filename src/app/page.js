@@ -199,6 +199,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <div className={styles.sectionSeparator}></div>
       <section id="rooms" className={styles.roomPreviewSection}>
         <div className={styles.roomPreviewLeft}>
           <div
@@ -283,6 +284,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className={styles.sectionSeparator}></div>
       {/* Hizmetler*/}
       <section className={styles.services}>
         <h2 className={styles.servicesTitle}>Hizmetlerimiz</h2>
@@ -299,7 +301,7 @@ export default function Home() {
           })}
         </div>
       </section>
-      {/* Image Gallery */}
+      <div className={styles.sectionSeparator}></div>
       <section className={styles.imageGallery}>
         <h2 className={styles.sectionTitle}>Galeri</h2>
         <div className={styles.galleryGrid}>
@@ -316,7 +318,6 @@ export default function Home() {
           })}
         </div>
       </section>
-      {/* Footer */}
       <Footer />
     </div>
   );

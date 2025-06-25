@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(90, 130, 126, 0.95);
+  background: rgba(57, 62, 70, 0.95); /* Orta gri arkaplan */
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 0.5rem 2rem;
@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  opacity: 0.7;
 }
 
 .navbarLeft {
@@ -32,7 +33,7 @@
 }
 
 .navLink {
-  color: white;
+  color: var(--color-light); /* Açık gri metin */
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -45,23 +46,19 @@
 }
 
 .navLink:hover {
-  background: rgba(185, 212, 170, 0.2);
-  color: var(--color-light);
+  background: rgba(0, 173, 181, 0.1); /* Turkuazın hafif tonu */
+  color: var(--color-accent); /* Turkuaz */
   transform: translateY(-2px);
 }
 
 .navLink.active {
-  background: rgba(185, 212, 170, 0.3);
-  color: var(--color-light);
+  background: rgba(0, 173, 181, 0.2); /* Turkuazın biraz daha koyu tonu */
+  color: var(--color-accent); /* Turkuaz */
 }
 
 .browseRoomsButton {
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  color: white;
+  background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
+  color: var(--color-light); /* Buton metni açık gri */
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 25px;
@@ -71,17 +68,17 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(90, 130, 126, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3); /* Turkuazın gölgesi */
   text-decoration: none;
   display: inline-block;
 }
 
 .browseRoomsButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(90, 130, 126, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 173, 181, 0.4); /* Turkuazın gölgesi */
   background: linear-gradient(
     45deg,
-    var(--color-secondary),
+    var(--color-primary),
     var(--color-accent)
-  );
+  ); /* Ana ve turkuaz renk geçişi */
 }

@@ -1,23 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Roboto&display=swap");
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  /* New Color Palette */
-  --color-primary: #5A827E;
-  --color-secondary: #84AE92;
-  --color-accent: #B9D4AA;
-  --color-light: #FAFFCA;
-  --color-dark: #2d3748;
-  --color-text: #1a202c;
+  --foreground-rgb: 34, 40, 49; /* #222831 */
+  --background-start-rgb: 57, 62, 70; /* #393E46 */
+  --background-end-rgb: 57, 62, 70; /* #393E46 */
+  /* Yeni Renk Paleti */
+  --color-primary: #222831; /* Koyu gri */
+  --color-secondary: #393E46; /* Orta gri */
+  --color-accent: #00ADB5; /* Turkuaz */
+  --color-light: #EEEEEE; /* Açık gri */
+  --color-dark: #222831; /* Koyu gri */
+  --color-text: #EEEEEE; /* Açık gri metin */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0; /* Koyu modda da siyah metin */
+    --background-start-rgb: 255, 255, 255; /* Koyu modda da beyaz arkaplan */
+    --background-end-rgb: 255, 255, 255; /* Koyu modda da beyaz arkaplan */
   }
 }
 
@@ -26,12 +26,7 @@
 }
 
 body {
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-start-rgb)); /* Düz beyaz arkaplan */
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;

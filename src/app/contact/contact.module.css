@@ -1,14 +1,9 @@
 .contactPageContainer {
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 50%,
-    var(--color-accent) 100%
-  );
+  background-color: var(--color-secondary); /* Orta gri arkaplan */
   padding: 2rem 0 0 0;
   font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--color-text);
+  color: var(--color-light); /* Açık gri metin */
   position: relative;
   z-index: 0;
   padding-top: 160px;
@@ -21,9 +16,9 @@
 .container {
   max-width: 1000px;
   margin: 0 auto 40px auto;
-  background: rgba(255, 255, 255, 0.95);
+  background-color: var(--color-dark); /* Koyu gri kart arkaplanı */
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(34, 40, 49, 0.1); /* Koyu gri gölge */
   backdrop-filter: blur(10px);
   overflow: hidden;
   flex: 1;
@@ -33,7 +28,7 @@
 
 .pageTitle {
   text-align: center;
-  color: #2d3748;
+  color: var(--color-light); /* Açık gri metin */
   margin: 0;
   padding: 3rem 2rem 2rem;
   font-size: 3rem;
@@ -41,7 +36,7 @@
   background: linear-gradient(
     45deg,
     var(--color-primary),
-    var(--color-secondary)
+    var(--color-accent)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -61,17 +56,16 @@
 
 .formContainer {
   padding: 3rem;
-  background: white;
+  background-color: var(--color-dark); /* Koyu gri arkaplan */
   border: none;
-  border-right: 1px solid #e2e8f0;
-  box-shadow: 0 8px 32px rgba(90, 130, 126, 0.1);
+  border-right: 1px solid var(--color-accent); /* Turkuaz border */
+  box-shadow: 0 4px 15px rgba(34, 40, 49, 0.05); /* Koyu gri gölge */
 }
 
 .contactInfo {
   padding: 3rem;
-  background: white;
   border: none;
-  box-shadow: 0 8px 32px rgba(90, 130, 126, 0.1);
+  box-shadow: 0 4px 15px rgba(34, 40, 49, 0.05); /* Koyu gri gölge */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -84,12 +78,12 @@
 
   .formContainer {
     border-right: none;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--color-accent);
   }
 }
 
 .sectionTitle {
-  color: #2d3748;
+  color: var(--color-light); /* Açık gri metin */
   font-size: 1.8rem;
   font-weight: 700;
   position: relative;
@@ -100,13 +94,14 @@
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 50px;
   height: 3px;
   background: linear-gradient(
     45deg,
     var(--color-primary),
-    var(--color-secondary)
+    var(--color-accent)
   );
   border-radius: 2px;
 }
@@ -116,17 +111,17 @@
   align-items: center;
   gap: 15px;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
+  color: var(--color-light);
   font-size: 1.1rem;
   font-weight: 500;
   padding: 1rem;
-  background: white;
+  background-color: var(--color-dark); /* Koyu gri arkaplan */
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .contactInfo p svg {
-  color: var(--color-primary);
+  color: var(--color-accent); /* Turkuaz */
   font-size: 1.3rem;
   min-width: 20px;
 }
@@ -138,7 +133,7 @@
 .contactForm label {
   display: block;
   margin-bottom: 0.8rem;
-  color: #2d3748;
+  color: var(--color-light); /* Açık gri metin */
   font-weight: 600;
   font-size: 1rem;
 }
@@ -148,13 +143,13 @@
 .contactForm textarea {
   width: 100%;
   padding: 1rem 1.2rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent); /* Turkuaz border */
   border-radius: 12px;
   font-size: 1rem;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  background: white;
-  color: var(--color-text);
+  background-color: var(--color-secondary); /* Orta gri arkaplan */
+  color: var(--color-light); /* Açık gri metin */
 }
 
 .contactForm textarea {
@@ -164,19 +159,19 @@
 
 .contactForm input:focus,
 .contactForm textarea:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-accent);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(90, 130, 126, 0.2);
-  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 173, 181, 0.2); /* Turkuazın gölgesi */
+  background-color: var(--color-secondary); /* Orta gri arkaplan */
 }
 
 .submitButton {
   background: linear-gradient(
     45deg,
     var(--color-primary),
-    var(--color-secondary)
+    var(--color-accent)
   );
-  color: white;
+  color: var(--color-light);
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 12px;
@@ -184,7 +179,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(90, 130, 126, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3); /* Turkuazın gölgesi */
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -193,11 +188,11 @@
 .submitButton:hover {
   background: linear-gradient(
     45deg,
-    var(--color-secondary),
+    var(--color-accent),
     var(--color-primary)
-  );
+  ); /* Yeni gradient */
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(90, 130, 126, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 173, 181, 0.4); /* Turkuazın gölgesi */
 }
 
 .mapContainer {
