@@ -31,24 +31,9 @@
   background-clip: text;
 }
 
-/* Hero Image Section */
-.heroImageSection {
-  width: 100%;
-  height: 500px;
-  margin-bottom: 4rem;
-}
-
-.heroImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-top: 3rem;
-  border-radius: 8px;
-}
-
 /* About Content Section */
 .aboutContentSection {
-  background: rgba(255, 255, 255, 0.95);
+  background-color: var(--color-dark);
   border-radius: 8px;
   padding: 4rem;
   margin-bottom: 4rem;
@@ -59,7 +44,7 @@
 .aboutContentTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-light);
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -67,15 +52,10 @@
 .aboutDescription {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: var(--color-primary);
+  color: var(--color-light);
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-}
-
-/* Information Cards Section */
-.infoCardsSection {
-  margin-bottom: 4rem;
 }
 
 .infoCardsGrid {
@@ -86,7 +66,8 @@
 }
 
 .infoCard {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--color-dark);
+  color: var(--color-light);
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
@@ -104,20 +85,20 @@
 
 .infoCardIcon {
   font-size: 3rem;
-  color: var(--color-primary);
+  color: var(--color-light);
   margin-bottom: 1rem;
 }
 
 .infoCardTitle {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-light);
   margin-bottom: 1rem;
 }
 
 .infoCardDescription {
   font-size: 1rem;
-  color: var(--color-primary);
+  color: var(--color-light);
   line-height: 1.6;
 }
 
@@ -145,11 +126,7 @@
 .statisticItem {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
+  background: var(--color-dark);
   border-radius: 15px;
   color: white;
   box-shadow: 0 10px 30px rgba(90, 130, 126, 0.3);
@@ -229,21 +206,153 @@
   transform: scale(1.1);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .infoCardsGrid,
+/* Çok ekstra büyük cihazlar (1400px+) */
+@media (min-width: 1400px) {
+  .container {
+    padding: 0 4rem;
+  }
+
+  .aboutTitle {
+    font-size: 4.5rem;
+  }
+
+  .aboutContentSection {
+    padding: 5rem;
+    margin-top: 3rem;
+  }
+
+  .infoCardsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+
   .statisticsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+
+  .aboutContentTitle,
+  .statisticsTitle {
+    font-size: 3.5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .aboutTitle {
-    font-size: 2.5rem;
+/* Büyük cihazlar (992px-1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    padding: 0 2rem;
   }
 
-  .heroImageSection {
-    height: 300px;
+  .aboutTitle {
+    font-size: 3.2rem;
+  }
+
+  .aboutContentSection,
+  .statisticsSection {
+    padding: 3rem;
+  }
+
+  .infoCardsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .statisticsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .aboutContentTitle,
+  .statisticsTitle {
+    font-size: 2.5rem;
+  }
+}
+
+/* Ekstra büyük cihazlar (1200px-1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .container {
+    padding: 0 3rem;
+  }
+
+  .aboutTitle {
+    font-size: 3.8rem;
+  }
+
+  .aboutContentSection,
+  .statisticsSection {
+    padding: 4rem;
+  }
+
+  .infoCardsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .statisticsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .aboutContentTitle,
+  .statisticsTitle {
+    font-size: 3rem;
+  }
+}
+
+/* Orta cihazlar (768px-992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .aboutTitle {
+    font-size: 2.8rem;
+  }
+
+  .aboutContentSection,
+  .statisticsSection {
+    padding: 2.5rem;
+  }
+
+  .infoCardsGrid,
+  .statisticsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .aboutContentTitle,
+  .statisticsTitle {
+    font-size: 2.2rem;
+  }
+}
+
+/* Küçük cihazlar (576px-768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .aboutTitle {
+    font-size: 2.7rem;
+  }
+
+  .aboutContentSection,
+  .statisticsSection {
+    padding: 2.2rem;
+  }
+
+  .infoCardsGrid,
+  .statisticsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.3rem;
+  }
+
+  .aboutContentTitle,
+  .statisticsTitle {
+    font-size: 2.3rem;
+  }
+}
+
+/* Ekstra küçük cihazlar (0-576px) */
+@media (max-width: 575px) {
+  .aboutTitle {
+    font-size: 2.5rem;
   }
 
   .aboutContentSection,
@@ -263,6 +372,7 @@
   }
 }
 
+/* Small Mobile Responsive Design (0-480px) */
 @media (max-width: 480px) {
   .container {
     padding: 0 10px;

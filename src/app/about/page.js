@@ -79,15 +79,6 @@ function About() {
   return (
     <div className={styles.aboutPage}>
       <div className={styles.container}>
-        {/* Hero Image Section */}
-        <div className={styles.heroImageSection}>
-          <img
-            src="/images/gallery-6.jpg"
-            alt="Grand Max Luxury Hotel"
-            className={styles.heroImage}
-          />
-        </div>
-
         {/* About Content Section */}
         <div className={styles.aboutContentSection}>
           <h2 className={styles.aboutContentTitle}>

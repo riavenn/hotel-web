@@ -67,8 +67,98 @@
   justify-content: space-between;
 }
 
-/* Tablet Responsive Design */
-@media (max-width: 1024px) {
+/* Büyük cihazlar (992px-1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .pageTitle {
+    font-size: 3rem;
+    padding: 3rem 2rem 2rem;
+  }
+
+  .formContainer,
+  .contactInfo {
+    padding: 2.5rem;
+  }
+
+  .contactForm input[type="text"],
+  .contactForm input[type="email"],
+  .contactForm textarea {
+    padding: 1rem 1.2rem;
+  }
+
+  .submitButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Ekstra büyük cihazlar (1200px-1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 50px;
+  }
+
+  .pageTitle {
+    font-size: 3.5rem;
+    padding: 4rem 3rem 2.5rem;
+  }
+
+  .formContainer,
+  .contactInfo {
+    padding: 3rem;
+  }
+
+  .contactForm input[type="text"],
+  .contactForm input[type="email"],
+  .contactForm textarea {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .submitButton {
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* Çok ekstra büyük cihazlar (1400px+) */
+@media (min-width: 1400px) {
+  .container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 60px;
+  }
+
+  .pageTitle {
+    font-size: 4rem;
+    padding: 5rem 4rem 3rem;
+  }
+
+  .formContainer,
+  .contactInfo {
+    padding: 4rem;
+  }
+
+  .contactForm input[type="text"],
+  .contactForm input[type="email"],
+  .contactForm textarea {
+    padding: 1.5rem 2rem;
+  }
+
+  .submitButton {
+    padding: 1.5rem 4rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* Orta cihazlar (768px-992px) */
+@media (min-width: 768px) and (max-width: 991px) {
   .container {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -97,13 +187,64 @@
   }
 }
 
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
+/* Küçük cihazlar (576px-768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .contactPageContainer {
+    padding-top: 130px;
+  }
+  .contactPage {
+    padding-top: 130px;
+  }
+
+  .container {
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
+    margin-bottom: 25px;
+  }
+
+  .pageTitle {
+    font-size: 2.2rem;
+    padding: 2.2rem 1.2rem 1.2rem;
+  }
+
+  .contactContent {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .formContainer {
+    border-right: none;
+    border-bottom: 1px solid var(--color-accent);
+    padding: 1.8rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .contactInfo {
+    padding: 1.8rem;
+    margin-top: 2.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .contactForm input[type="text"],
+  .contactForm input[type="email"],
+  .contactForm textarea {
+    padding: 0.9rem 1.1rem;
+  }
+
+  .submitButton {
+    padding: 0.9rem 2.2rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Ekstra küçük cihazlar (0-576px) */
+@media (max-width: 575px) {
   .contactPageContainer {
     padding-top: 120px;
   }
-}
-@media (max-width: 768px) {
   .contactPage {
     padding-top: 120px;
   }

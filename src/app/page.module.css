@@ -33,17 +33,21 @@
   z-index: 5;
 }
 
+.headerContent h2 {
+  margin: 0;
+}
+
 .headerHotelName {
-  font-size: 4rem; /* Daha büyük font boyutu */
-  font-weight: 700; /* Daha kalın font */
-  color: var(--color-light); /* Açık gri metin */
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-light);
 }
 
 .hotelSlogan {
-  font-size: 1.5rem; /* Daha büyük font boyutu */
-  letter-spacing: 12px; /* Daha geniş harf aralığı */
-  margin-bottom: 40px; /* Daha fazla alt boşluk */
-  color: var(--color-light); /* Açık gri */
+  font-size: 1.5rem;
+  letter-spacing: 12px;
+  margin-bottom: 40px;
+  color: var(--color-light);
   margin: 0;
   margin-bottom: 2rem;
 }
@@ -154,7 +158,7 @@
 }
 
 .roomImageContainer:hover .roomImageName {
-  transform: translate(-50%, -250%);
+  transform: translate(-50%, -150%);
 }
 
 .roomImageOverlay {
@@ -163,7 +167,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(34, 40, 49, 0.8); /* Daha koyu gri overlay */
+  background-color: var(--color-dark); /* Koyu gri overlay */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -254,7 +258,7 @@
 
 .roomMenuItem:hover,
 .activeRoom {
-  background: rgba(185, 212, 170, 0.2);
+  background-color: var(--color-dark);
   border-left-color: var(--color-accent);
   color: var(--color-accent);
 }
@@ -345,7 +349,7 @@
 }
 
 .servicesItem {
-  background: white;
+  background-color: var(--color-dark);
   padding: 30px;
   border-radius: 15px;
   margin-top: 2rem;
@@ -358,6 +362,7 @@
   border: 2px solid transparent;
   width: 250px; /* Sabit genişlik */
   height: 250px; /* Sabit yükseklik */
+  color: var(--color-light);
 }
 
 .servicesItem:hover {
@@ -368,7 +373,7 @@
 
 .serviceIcon {
   font-size: 3rem;
-  color: var(--color-primary);
+  color: var(--color-light);
   margin-bottom: 20px;
 }
 
@@ -505,8 +510,98 @@
   left: auto;
 }
 
-/* Tablet Responsive Design */
-@media (max-width: 1024px) {
+/* Büyük cihazlar (992px-1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .headerHotelName {
+    font-size: 3.5rem;
+  }
+
+  .hotelSlogan {
+    font-size: 1.3rem;
+    letter-spacing: 9px;
+  }
+
+  .aboutSection {
+    padding: 40px 20px;
+  }
+
+  .aboutHotelName {
+    font-size: 2rem;
+  }
+
+  .hotelDescription {
+    text-align: center;
+  }
+
+  .roomPreviewSection {
+    padding: 40px 20px;
+  }
+
+  .roomImageContainer:hover .roomImageName {
+    transform: translate(-50%, -200%);
+  }
+
+  .services {
+    padding: 60px 20px;
+  }
+
+  .servicesTitle {
+    font-size: 2.8rem;
+  }
+
+  .customerReviewsSection,
+  .imageGallery {
+    padding: 4rem 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.8rem;
+  }
+}
+
+/* Ekstra büyük cihazlar (1200px-1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .headerHotelName {
+    font-size: 4rem;
+  }
+
+  .hotelSlogan {
+    font-size: 1.4rem;
+    letter-spacing: 10px;
+  }
+
+  .aboutSection {
+    padding: 50px 30px;
+  }
+
+  .aboutHotelName {
+    font-size: 2.5rem;
+  }
+
+  .roomPreviewSection {
+    padding: 50px 30px;
+  }
+
+  .services {
+    padding: 80px 30px;
+  }
+
+  .servicesTitle {
+    font-size: 3rem;
+  }
+
+  .customerReviewsSection,
+  .imageGallery {
+    padding: 5rem 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 3rem;
+  }
+}
+
+/* Orta cihazlar (768px-992px) */
+@media (min-width: 768px) and (max-width: 991px) {
   .headerHotelName {
     font-size: 3rem;
   }
@@ -536,7 +631,9 @@
 
   .aboutRight {
     padding-left: 0;
-    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .roomPreviewSection {
@@ -563,11 +660,53 @@
   }
 
   .galleryGrid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 1200px) {
+/* Çok ekstra büyük cihazlar (1400px+) */
+@media (min-width: 1400px) {
+  .headerHotelName {
+    font-size: 4.5rem;
+  }
+
+  .hotelSlogan {
+    font-size: 1.6rem;
+    letter-spacing: 12px;
+  }
+
+  .aboutSection {
+    padding: 60px 40px;
+  }
+
+  .aboutHotelName {
+    font-size: 3rem;
+  }
+
+  .roomPreviewSection {
+    padding: 60px 40px;
+  }
+
+  .services {
+    padding: 100px 40px;
+  }
+
+  .servicesTitle {
+    font-size: 3.5rem;
+  }
+
+  .customerReviewsSection,
+  .imageGallery {
+    padding: 6rem 4rem;
+  }
+
+  .sectionTitle {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1199px) {
   .slick-prev {
     left: -35px !important;
   }
@@ -577,8 +716,86 @@
   }
 }
 
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
+/* Küçük cihazlar (576px-768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .header {
+    height: 75vh;
+  }
+
+  .headerHotelName {
+    font-size: 2.8rem;
+  }
+
+  .hotelSlogan {
+    font-size: 1.1rem;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+  }
+
+  .aboutSection {
+    padding: 25px 15px;
+    min-height: auto;
+    padding-top: 45px;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .aboutHotelName {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    border-right: none;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .aboutMiddle {
+    display: none;
+  }
+
+  .aboutRight {
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+
+  .hotelDescription {
+    text-align: center;
+  }
+
+  .roomPreviewSection {
+    flex-direction: column;
+    padding: 35px 25px;
+  }
+
+  .roomImageContainer {
+    width: 100%;
+    margin: 0 25px;
+  }
+
+  .roomImageContainer:hover .roomImageName {
+    transform: translate(-50%, -200%);
+  }
+
+  .servicesList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 1rem 2rem;
+    justify-items: center;
+  }
+
+  .servicesItem {
+    width: 220px;
+    height: 220px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Ekstra küçük cihazlar (0-576px) */
+@media (max-width: 575px) {
   .header {
     height: 70vh;
   }
@@ -641,12 +858,17 @@
   }
 
   .roomImageName {
-    font-size: 1.5rem;
-    letter-spacing: 3px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+    text-align: center;
   }
 
   .roomImageContainer:hover .roomImageName {
-    transform: translate(-50%, -120%);
+    transform: translate(-50%, -200%);
   }
 
   .roomOverlayFeatures {
@@ -752,7 +974,7 @@
   }
 }
 
-/* Small Mobile Responsive Design */
+/* Small Mobile Responsive Design (0-480px) */
 @media (max-width: 480px) {
   .headerHotelName {
     font-size: 2rem;
@@ -769,6 +991,19 @@
 
   .hotelDescription {
     font-size: 0.9rem;
+  }
+
+  .roomImageName {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 85%;
+  }
+
+  .roomImageContainer:hover .roomImageName {
+    transform: translate(-50%, -200%);
   }
 
   .servicesTitle {

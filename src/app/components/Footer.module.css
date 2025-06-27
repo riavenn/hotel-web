@@ -50,6 +50,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  justify-content: center;
 }
 
 .contactItem {
@@ -128,7 +129,162 @@
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
+/* 1200px'den küçük cihazlar */
+@media (max-width: 1199px) {
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footerSection {
+    width: 100%;
+    align-items: center;
+  }
+
+  .socialMedia {
+    justify-content: center;
+  }
+
+  .contactInfo {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Ekstra büyük cihazlar (1200px-1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .footerContainer {
+    max-width: 1400px;
+    padding: 0 3rem;
+  }
+
+  .footerContent {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  .footerTitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .footerDescription,
+  .contactItem {
+    font-size: 1rem;
+  }
+}
+
+/* Çok ekstra büyük cihazlar (1400px+) */
+@media (min-width: 1400px) {
+  .footerContainer {
+    max-width: 1600px;
+    padding: 0 4rem;
+  }
+
+  .footerContent {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+  }
+
+  .footerTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .footerDescription,
+  .contactItem {
+    font-size: 1.1rem;
+  }
+}
+
+/* Orta cihazlar (768px-992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .footerContainer {
+    padding: 0 1.5rem;
+  }
+
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footerTitle {
+    font-size: 1.3rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .footerDescription,
+  .contactItem {
+    font-size: 0.9rem;
+  }
+
+  .contactInfo {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Küçük cihazlar (576px-768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer {
+    padding: 2.5rem 0 1.2rem;
+    text-align: center;
+  }
+
+  .footerContainer {
+    padding: 0 1.2rem;
+    text-align: center;
+  }
+
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footerSection {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footerTitle {
+    font-size: 1.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .footerDescription,
+  .contactItem {
+    font-size: 0.85rem;
+  }
+
+  .contactInfo {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Ekstra küçük cihazlar (0-576px) */
+@media (max-width: 575px) {
   .footer {
     padding: 2rem 0 1rem;
     text-align: center;
@@ -178,5 +334,23 @@
 
   .footerBottom {
     text-align: center;
+  }
+}
+
+@media (max-width: 397px) {
+  .contactItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    text-align: center;
+  }
+
+  .contactIcon {
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    flex-shrink: 0;
   }
 }

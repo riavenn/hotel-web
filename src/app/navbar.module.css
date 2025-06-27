@@ -3,10 +3,8 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(57, 62, 70, 0.95); /* Orta gri arkaplan */
   backdrop-filter: blur(10px);
   z-index: 1000;
-  padding: 0.5rem 2rem;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -19,7 +17,7 @@
 }
 
 .hotelLogo {
-  height: 80px;
+  height: 60px;
   width: auto;
   cursor: pointer;
 }
@@ -35,9 +33,9 @@
 .navLink {
   color: var(--color-light); /* Açık gri metin */
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
@@ -58,7 +56,7 @@
 .browseRoomsButton {
   background: linear-gradient(45deg, var(--color-accent));
   color: var(--color-light); /* Buton metni açık gri */
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -184,8 +182,125 @@
   border-bottom: none;
 }
 
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
+/* Büyük cihazlar (992px-1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+    padding: 0.4rem 1.8rem;
+  }
+
+  .hotelLogo {
+    height: 55px;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .browseRoomsButton {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Ekstra büyük cihazlar (1200px-1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar {
+    padding: 0.5rem 2.5rem;
+  }
+
+  .hotelLogo {
+    height: 70px;
+  }
+
+  .navLink {
+    font-size: 1rem;
+    padding: 0.6rem 1.3rem;
+  }
+
+  .browseRoomsButton {
+    padding: 0.7rem 1.7rem;
+    font-size: 1rem;
+  }
+}
+
+/* Orta cihazlar (768px-992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .hotelLogo {
+    height: 70px;
+  }
+
+  .navLink {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .browseRoomsButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Çok ekstra büyük cihazlar (1400px+) */
+@media (min-width: 1400px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .hotelLogo {
+    height: 75px;
+  }
+
+  .navLink {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .browseRoomsButton {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Küçük cihazlar (576px-768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbarLeft {
+    flex: 0 0 auto;
+    order: 1;
+  }
+
+  .hotelLogo {
+    height: 65px;
+  }
+
+  .navbarCenter {
+    display: none;
+  }
+
+  .navbarRight {
+    display: none;
+  }
+
+  .hamburgerMenu {
+    display: flex;
+    flex: 0 0 auto;
+    order: 3;
+  }
+}
+
+/* Ekstra küçük cihazlar (0-576px) */
+@media (max-width: 575px) {
   .navbar {
     padding: 0.5rem 1rem;
     display: flex;
@@ -199,7 +314,7 @@
   }
 
   .hotelLogo {
-    height: 60px;
+    height: 50px;
   }
 
   .navbarCenter {
@@ -221,7 +336,7 @@
   }
 }
 
-/* Small Mobile Responsive Design */
+/* Small Mobile Responsive Design (0-480px) */
 @media (max-width: 480px) {
   .navbar {
     padding: 0.3rem 0.5rem;
